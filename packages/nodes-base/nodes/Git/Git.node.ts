@@ -180,6 +180,34 @@ export class Git implements INodeType {
 				required: true,
 				description: 'Local path to which the git repository should be cloned into',
 			},
+			{
+				displayName: 'User Name',
+				name: 'userName',
+				type: 'string',
+				displayOptions: {
+					show: {
+						operation: ['userSetup'],
+					},
+				},
+				default: '',
+				placeholder: 'User Name',
+				required: true,
+				description: 'This is the author name to be used for Git actions.',
+			},
+			{
+				displayName: 'E-Mail Address',
+				name: 'emailAddr',
+				type: 'string',
+				displayOptions: {
+					show: {
+						operation: ['userSetup'],
+					},
+				},
+				default: '',
+				placeholder: 'user@domain.com',
+				required: true,
+				description: 'This is the author e-mail address to be used for Git actions.',
+			},
 
 			...addFields,
 			...addConfigFields,
